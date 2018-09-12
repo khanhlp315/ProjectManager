@@ -5,12 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectManager"
         mc:Ignorable="d"
-        Title="AccessingDatabase" Height="300" Width="300">
+        
+        Title="AccessingDatabase" Height="600" Width="900">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock x:Name="MessageTextBlock"
                        Style="{StaticResource CustomTextblockStyle}"
-                       Text="Kết nối đến cơ sở dữ liệu..." />
+                       Text="Connecting to database..." />
+            <ProgressBar x:Name="IndeterminateProgressBar"
+                         Height="15"
+                         Width="400"
+                         Margin="0,10,0,0"
+                         IsIndeterminate="True" />
+            <Button x:Name="RetryButton"
+                    Content="Retry"
+                    Width="75"
+                    Height="25"
+                    Visibility="Collapsed"
+                    Margin="0,10,0,0"/>
         </StackPanel>
     </Grid>
 </Window>
