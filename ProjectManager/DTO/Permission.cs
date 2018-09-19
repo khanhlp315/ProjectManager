@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DTO
+﻿namespace DTO
 {
-    class Permission
+    public enum Permission
     {
-        int permId;
-        string title;
+        OWNER,
+        ADMIN,
+        MEMBER
     }
 }
