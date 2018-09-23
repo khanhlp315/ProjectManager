@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Role
+    public interface IDTO
     {
-        int roleID;
-        int roleName;
+        //int ID;
     }
 }

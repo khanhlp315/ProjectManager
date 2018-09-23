@@ -1,12 +1,13 @@
-﻿<Window x:Class="GUI.AccessingDatabase"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjectManager"
-        mc:Ignorable="d"
-        
-        Title="AccessingDatabase" Height="600" Width="900">
+﻿<Page x:Class="ProjectManager.AccessingDatabaseGUI"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectManager"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="AccessingDatabaseGUI" Loaded="Page_Loaded">
+
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock x:Name="MessageTextBlock"
@@ -22,7 +23,7 @@
                     Width="75"
                     Height="25"
                     Visibility="Collapsed"
-                    Margin="0,10,0,0"/>
+                    Margin="0,10,0,0" Click="RetryButton_Click"/>
         </StackPanel>
     </Grid>
-</Window>
+</Page>

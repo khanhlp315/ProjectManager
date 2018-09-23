@@ -18,14 +18,14 @@ namespace DAO
             return new User();
         }
 
-        public User GetUserByUserName(string username)
-        {
-            if(username == "admin")
-            {
-                return new User(-1, "admin", "admin", Permission.ADMIN);
-            }
-            return null;
-        }
+        //public User GetUserByUserName(string username)
+        //{
+        //    if(username == "admin")
+        //    {
+        //        return new User(-1, "admin", "admin", Permission.ADMIN);
+        //    }
+        //    return null;
+        //}
 
         public bool CheckIfUsernameExists(string username)
         {

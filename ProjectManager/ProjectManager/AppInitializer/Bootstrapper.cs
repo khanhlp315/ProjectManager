@@ -22,7 +22,7 @@ namespace ProjectManager.AppInitializer
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            Container.RegisterInstances();
+            //Container.RegisterInstances();
         }
 
         protected override void ConfigureModuleCatalog()

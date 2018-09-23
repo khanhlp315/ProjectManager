@@ -1,66 +1,27 @@
-﻿namespace DTO
+﻿using System.Data.Linq.Mapping;
+using System.Data.Linq;
+using System.ComponentModel;
+namespace DTO
 {
-    public class User
+    [Table(Name = "User")]
+    public class User: INotifyPropertyChanged
     {
-        private int _id;
-        private string _username;
-        private string _password;
-        private Permission _permission;
+        [Column(Name ="ID",DbType = "char(6)",Storage ="_id", CanBeNull = false, IsPrimaryKey = true)]
+        private int _id { get; set; }
 
-        public User(int id = -1, string username = "", string password = "", Permission permission = Permission.MEMBER)
-        {
-            _id = id;
-            _username = username;
-            _password = password;
-            _permission = Permission.MEMBER;
-        }
+        [Column(Name = "UserName", DbType = "char(20)", Storage = "_username", CanBeNull = false)]
+        private string _username { get; set; }
 
-        public int ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
+        [Column(Name = "Password", DbType = "char(20)", Storage = "_password", CanBeNull = false)]
+        private string _password { get; set; }
 
-        public string Username
-        {
-            get
-            {
-                return _username;
-            }
-            set
-            {
-                _username = value;
-            }
-        }
+        [Column(Name = "Permission", DbType = "char(1)", Storage = "_permission", CanBeNull = false)]
+        private int _permission { get; set; }
 
-        public string Password
+        public User()
         {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value;
-            }
+            
         }
-
-        public Permission Permission
-        {
-            get
-            {
-                return _permission;
-            }
-            set
-            {
-                _permission = value;
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
