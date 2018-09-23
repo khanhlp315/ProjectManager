@@ -81,30 +81,11 @@
     <Compile Include="AccessingDatabaseGUI.xaml.cs">
       <DependentUpon>AccessingDatabaseGUI.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppInitializer\Bootstrapper.cs" />
-    <Compile Include="AppInitializer\UnityConfig.cs" />
-    <Compile Include="Core\Login\ILogin.cs" />
-    <Compile Include="Core\Login\LoginImpl.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginGUI.xaml.cs">
       <DependentUpon>LoginGUI.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\MainModule.cs" />
-    <Compile Include="Utils\PasswordHelper.cs" />
-    <Compile Include="ViewModels\Bases\ViewModelBase.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\ProjectListViewModel.cs" />
-    <Compile Include="Views\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProjectList.xaml.cs">
-      <DependentUpon>ProjectList.xaml</DependentUpon>
     </Compile>
     <Page Include="AccessingDatabaseGUI.xaml">
       <SubType>Designer</SubType>
@@ -126,18 +107,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginGUI.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProjectList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

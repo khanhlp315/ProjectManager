@@ -29,7 +29,7 @@ namespace ProjectManager
             var isConnected = await BUS.AccessingDatabaseBUS.CreateConnection("Initial Catalog=QuanLyDuAn;Data Source=.;Integrated Security = True");
             if (isConnected)
             {
-                NavigationService.Navigate(new Uri("//ProjectManager;component//LoginGUI.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("LoginGUI.xaml", UriKind.Relative));
                 
             }
             else
