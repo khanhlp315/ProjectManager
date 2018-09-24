@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessingDatabaseBUS.cs" />
+    <Compile Include="CommonBus.cs" />
     <Compile Include="Exceptions\CheckedException.cs" />
     <Compile Include="LoginBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

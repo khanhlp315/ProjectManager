@@ -1,66 +1,66 @@
-﻿namespace DTO
+﻿using System.ComponentModel;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
+namespace DTO
 {
-    public class User
+    [Table(Name = "User")]
+    public class User : INotifyPropertyChanged
     {
-        private int _id;
-        private string _username;
-        private string _password;
-        private Permission _permission;
+        [Column(Name = "ID", DbType = "char(6)", Storage = "_ID", CanBeNull = false, IsPrimaryKey = true)]
+        private int _ID { get; set; }
 
-        public User(int id = -1, string username = "", string password = "", Permission permission = Permission.MEMBER)
+        public int Get_ID()
         {
-            _id = id;
-            _username = username;
-            _password = password;
-            _permission = Permission.MEMBER;
+            return _ID;
+        }
+        public void Set_ID(int id)
+        {
+            _ID = id;
+        }
+        [Column(Name = "UserName", DbType = "char(20)", Storage = "_UserName", CanBeNull = false)]
+        private string _UserName { get; set; }
+
+        public string Get_UserName()
+        {
+            return _UserName;
+        }
+        public void Set_UserName(string id)
+        {
+            _UserName = id;
         }
 
-        public int ID
+        [Column(Name = "Password", DbType = "char(20)", Storage = "_Password", CanBeNull = false)]
+        private string _Password;
+
+        public string Get_Password()
         {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
+            return _Password;
         }
 
-        public string Username
+
+        public void Set_Password(string value)
         {
-            get
-            {
-                return _username;
-            }
-            set
-            {
-                _username = value;
-            }
+            _Password = value;
         }
 
-        public string Password
+        
+
+        [Column(Name = "Permission", DbType = "char(1)", Storage = "_Permission", CanBeNull = false)]
+        private int _Permission;
+        public int Get_Permission()
         {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value;
-            }
+            return _Permission;
         }
 
-        public Permission Permission
+        public void Set_Permission(int value)
         {
-            get
-            {
-                return _permission;
-            }
-            set
-            {
-                _permission = value;
-            }
+            _Permission = value;
         }
+
+        public User()
+        {
+
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
