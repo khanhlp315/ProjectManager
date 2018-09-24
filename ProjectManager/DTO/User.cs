@@ -10,11 +10,11 @@ namespace DTO
         //private string _id;
         public string id { get; set; }
 
-        [Column(Name = "UserName", DbType = "char(20)", CanBeNull = false)]
+        [Column(Name = "UserName", DbType = "varchar(20)", CanBeNull = false)]
         //private string _userName { get; set; }
         public string userName { get;set ; }
 
-        [Column(Name = "Password", DbType = "char(20)", CanBeNull = false)]
+        [Column(Name = "Password", DbType = "varchar(20)", CanBeNull = false)]
         //private string _password;
         public string password { get; set; }
 

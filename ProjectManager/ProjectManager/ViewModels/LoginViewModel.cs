@@ -65,7 +65,7 @@ namespace ProjectManager.ViewModels
             //StringValidationRule rule = new StringValidationRule(false,false,StringValidationRule.LimitComparisionType.MoreThanOrEqual,6);
             if(user == null)
             {
-               
+                Console.WriteLine("Fail");
             }
             else
             {
