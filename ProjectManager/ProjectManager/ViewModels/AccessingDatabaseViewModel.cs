@@ -6,30 +6,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ProjectManager.ViewModels
 {
-    class AccessingDatabaseViewModel : ViewModelBase
+    class AccessingDatabaseViewModel: ViewModelBase
     {
         private IRegionManager _regionManager;
-        public async Task<bool> BeingConnecting()
-        {
-            var isConnected = await BUS.AccessingDatabaseBUS.CreateConnection("Initial Catalog=QuanLyDuAn;Data Source=.;Integrated Security = True");
-            return isConnected;
-        }
 
         public AccessingDatabaseViewModel(IRegionManager regionManager)
         {
-             _regionManager = regionManager;
-            var t = BeingConnecting();
-            t.Start();
-
-            t.ContinueWith(task=> {
+            _regionManager = regionManager;
+            var t = BeginConnecting();
+            t.ContinueWith(task =>
+            {
                 if(task.Result)
+                {
                     _regionManager.RequestNavigate("ContentRegion", "Login");
-             });
+                }
+                else
+                {
+                    Retry();
+                }
+            }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        
+        public async Task<bool> BeginConnecting()
+        {
+            return await BUS.AccessingDatabaseBUS.CreateConnection("Initial Catalog=QuanLyDuAn;Data Source=.;Integrated Security = True");
+        }
+
+        public void Retry()
+        {
+
+        }
     }
 }

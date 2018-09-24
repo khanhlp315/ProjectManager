@@ -9,7 +9,7 @@ using BUS.Exceptions;
 
 namespace ProjectManager.Core.Login
 {
-    public class LoginImpl: ILogin
+    public class LoginImpl : ILogin
     {
         private readonly LoginBUS _loginBUS = new LoginBUS();
         public User Login(string username, string password)
@@ -19,7 +19,7 @@ namespace ProjectManager.Core.Login
                 var user = _loginBUS.Login(username, password);
                 return user;
             }
-            catch (CheckedException)
+            catch(CheckedException)
             {
                 return null;
             }

@@ -1,27 +1,66 @@
-﻿using System.Data.Linq.Mapping;
-using System.Data.Linq;
-using System.ComponentModel;
-namespace DTO
+﻿namespace DTO
 {
-    [Table(Name = "User")]
-    public class User: INotifyPropertyChanged
+    public class User
     {
-        [Column(Name ="ID",DbType = "char(6)",Storage ="_id", CanBeNull = false, IsPrimaryKey = true)]
-        private int _id { get; set; }
+        private int _id;
+        private string _username;
+        private string _password;
+        private Permission _permission;
 
-        [Column(Name = "UserName", DbType = "char(20)", Storage = "_username", CanBeNull = false)]
-        private string _username { get; set; }
-
-        [Column(Name = "Password", DbType = "char(20)", Storage = "_password", CanBeNull = false)]
-        private string _password { get; set; }
-
-        [Column(Name = "Permission", DbType = "char(1)", Storage = "_permission", CanBeNull = false)]
-        private int _permission { get; set; }
-
-        public User()
+        public User(int id = -1, string username = "", string password = "", Permission permission = Permission.MEMBER)
         {
-            
+            _id = id;
+            _username = username;
+            _password = password;
+            _permission = Permission.MEMBER;
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int ID
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+            }
+        }
+
+        public Permission Permission
+        {
+            get
+            {
+                return _permission;
+            }
+            set
+            {
+                _permission = value;
+            }
+        }
     }
 }

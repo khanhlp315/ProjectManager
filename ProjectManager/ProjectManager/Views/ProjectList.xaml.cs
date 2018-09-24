@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ProjectManager.Views
 {
     /// <summary>
-    /// Interaction logic for AccessingDatabase.xaml
+    /// Interaction logic for ProjectList.xaml
     /// </summary>
-    public partial class AccessingDatabase : UserControl
+    public partial class ProjectList : UserControl
     {
-        public AccessingDatabase()
+        public ProjectList()
         {
             InitializeComponent();
         }

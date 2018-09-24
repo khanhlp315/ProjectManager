@@ -10,14 +10,13 @@ namespace BUS
 
         public User Login(string username, string password)
         {
-            return null;
-            //var user = _userDAL.GetUserByUserName(username);
-            //if(user == null || user.Password != password)
-            //{
-            //    throw new CheckedException("Incorrect username or password!");
-            //}
+            var user = _userDAL.GetUserByUserName(username);
+            if(user == null || user.Password != password)
+            {
+                throw new CheckedException("Incorrect username or password!");
+            }
 
-            //return user;
+            return user;
         }
     }
 }

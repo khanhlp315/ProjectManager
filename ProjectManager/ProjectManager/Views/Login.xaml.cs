@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectManager
+namespace ProjectManager.Views
 {
     /// <summary>
-    /// Interaction logic for LoginGUI.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class LoginGUI : Page
+    public partial class Login : UserControl
     {
-        public LoginGUI()
+        public Login()
         {
             InitializeComponent();
-        }
-
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

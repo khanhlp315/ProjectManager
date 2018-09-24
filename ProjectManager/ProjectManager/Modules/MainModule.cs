@@ -25,6 +25,7 @@ namespace ProjectManager.Modules
         public void Initialize()
         {
             _container.RegisterTypeForNavigation<AccessingDatabase>();
+
             _container.RegisterTypeForNavigation<Login>();
             _container.RegisterTypeForNavigation<ProjectList>();
 
