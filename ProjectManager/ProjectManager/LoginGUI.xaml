@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:ProjectManager"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginGUI">
+      Title="LoginGUI"
+      ShowsNavigationUI="False">
 
     <Grid Loaded="Grid_Loaded">
         <StackPanel VerticalAlignment="Center"

@@ -15,7 +15,7 @@ namespace ProjectManager.AppInitializer
     {
         public static IUnityContainer RegisterInstances(this IUnityContainer container)
         {
-            //container.RegisterType<ILogin, LoginImpl>();
+            container.RegisterType<ILogin, LoginImpl>();
             return container;
         }
     }

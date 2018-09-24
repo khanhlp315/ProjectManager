@@ -78,8 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AccessingDatabaseGUI.xaml.cs">
-      <DependentUpon>AccessingDatabaseGUI.xaml</DependentUpon>
+    <Compile Include="ViewModels\AccessingDatabaseViewModel.cs" />
+    <Compile Include="Views\AccessingDatabase.xaml.cs">
+      <DependentUpon>AccessingDatabase.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppInitializer\Bootstrapper.cs" />
     <Compile Include="AppInitializer\UnityConfig.cs" />
@@ -106,7 +107,7 @@
     <Compile Include="Views\ProjectList.xaml.cs">
       <DependentUpon>ProjectList.xaml</DependentUpon>
     </Compile>
-    <Page Include="AccessingDatabaseGUI.xaml">
+    <Page Include="Views\AccessingDatabase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

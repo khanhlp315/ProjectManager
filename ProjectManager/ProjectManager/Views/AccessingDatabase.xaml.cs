@@ -18,9 +18,9 @@ namespace ProjectManager
     /// <summary>
     /// Interaction logic for AccessingDatabaseGUI.xaml
     /// </summary>
-    public partial class AccessingDatabaseGUI : Page
+    public partial class AccessingDatabase : UserControl
     {
-        public AccessingDatabaseGUI()
+        public AccessingDatabase()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace ProjectManager
             var isConnected = await BUS.AccessingDatabaseBUS.CreateConnection("Initial Catalog=QuanLyDuAn;Data Source=.;Integrated Security = True");
             if (isConnected)
             {
-                NavigationService.Navigate(new Uri("//ProjectManager;component//LoginGUI.xaml", UriKind.Relative));
+                //NavigationService.Navigate(new Uri("//ProjectManager;component//LoginGUI.xaml", UriKind.Relative));
                 
             }
             else
@@ -44,15 +44,15 @@ namespace ProjectManager
             }
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
+        //private void Grid_Loaded(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            await BeingConnecting();
-        }
+        //private async void Page_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    //await BeingConnecting();
+        //}
 
         private async void RetryButton_Click(object sender, RoutedEventArgs e)
         {
