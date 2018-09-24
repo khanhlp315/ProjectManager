@@ -4,6 +4,8 @@ using ProjectManager.Core.Login;
 using ProjectManager.ViewModels.Bases;
 using Prism.Commands;
 using Prism.Regions;
+using CommonBUS;
+using System.Globalization;
 
 namespace ProjectManager.ViewModels
 {
@@ -12,11 +14,11 @@ namespace ProjectManager.ViewModels
         private string _username;
         private string _password;
 
-        private ILogin _login;
+        private LoginImpl _login;
 
         private IRegionManager _regionManager;
 
-        public LoginViewModel(ILogin login, IRegionManager regionManager)
+        public LoginViewModel(LoginImpl login, IRegionManager regionManager)
         {
             _login = login;
             _regionManager = regionManager;
@@ -60,9 +62,10 @@ namespace ProjectManager.ViewModels
         private void Login()
         {
             var user = _login.Login(Username, Password);
+            //StringValidationRule rule = new StringValidationRule(false,false,StringValidationRule.LimitComparisionType.MoreThanOrEqual,6);
             if(user == null)
             {
-                
+               
             }
             else
             {

@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using DTO;
+using System.Data.Linq;
+using System.Linq;
+using System;
 
 namespace DAO
 {
@@ -20,11 +23,15 @@ namespace DAO
 
         public User GetUserByUserName(string username)
         {
-            //if (username == "admin")
-            //{
-            //    return new User(-1, "admin", "admin", Permission.ADMIN);
-            //}
-            return null;
+
+            //User user = new User();
+            Table<User> users = DAL.DALConnection.Database.GetTable<User>();
+            var query =
+            from user in users
+            where user.userName == username
+            select user;
+
+            return query.FirstOrDefault<User>();
         }
 
         public bool CheckIfUsernameExists(string username)

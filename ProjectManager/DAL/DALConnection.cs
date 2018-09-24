@@ -14,7 +14,7 @@ namespace DAL
     //[Table]
     public class DALConnection
     {
-        private static ProjectManager Database { get ; set ; }         
+        public static ProjectManager Database { get ; set ; }         
 
         public DALConnection()
         { }
@@ -24,8 +24,16 @@ namespace DAL
             {
                 Database = new ProjectManager(connectionstring);
                 if (!Database.DatabaseExists())
+                {
+                    User admin = new User("admin", "admin", 0);
                     Database.CreateDatabase();
-                return true;
+                    Database.User.InsertOnSubmit(admin);
+                    SummitChanges();
+                    return true;    
+                }
+                else
+                    return true;
+                    
             }
             catch (Exception e) 
             {
@@ -85,7 +93,7 @@ namespace DAL
             else
                 return false;
         }
-        public void SummitChanges()
+        public static void SummitChanges()
         {
             Database.SubmitChanges();
         }

@@ -11,7 +11,7 @@ namespace BUS
         public User Login(string username, string password)
         {
             var user = _userDAL.GetUserByUserName(username);
-            if(user == null || user.Get_Password() != password)
+            if(user == null || user.password != password)
             {
                 throw new CheckedException("Incorrect username or password!");
             }

@@ -11,6 +11,19 @@ namespace CommonBUS
 {
     public class StringValidationRule: ValidationRule
     {
+        public StringValidationRule(bool _CanBeEmpty,bool _AllowWhiteSpace, 
+            LimitComparisionType _LimitComparision, int _CharacterLimit)
+        {
+            CanBeEmpty = _CanBeEmpty;
+            AllowWhiteSpace = _AllowWhiteSpace; 
+            LimitComparision = _LimitComparision;
+            CharacterLimit = _CharacterLimit;
+        }
+
+        protected StringValidationRule()
+        {
+        }
+
         public enum LimitComparisionType
         {
             LessThanOrEqual,
