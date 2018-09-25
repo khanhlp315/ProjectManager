@@ -33,7 +33,7 @@
                 <TextBox x:Name="AccountNameTextBox"
                          Style="{StaticResource CustomTextboxStyle}"
                          Grid.Column="1"
-                         Text="{Binding UserName}"
+                         Text="{Binding Username}"
                          />
 
 
@@ -43,7 +43,7 @@
                 <PasswordBox x:Name="AccountPasswordPasswordBox"
                              Style="{StaticResource CustomPasswordBoxStyle}"
                              Grid.Row="1"
-                             Grid.Column="1" utils:PasswordHelper.Attach="True" utils:PasswordHelper.Password="{Binding Password}"/>
+                             Grid.Column="1" utils:PasswordHelper.Attach="True" utils:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"/>
                 <Button x:Name="LoginButton"
                         Grid.Row="2"
                         Grid.ColumnSpan="2"
