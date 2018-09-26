@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Windows;
+using System;
 using BUS;
 using ProjectManager.Core.Login;
 using ProjectManager.ViewModels.Bases;
@@ -66,6 +67,7 @@ namespace ProjectManager.ViewModels
             if(user == null)
             {
                 Console.WriteLine("Fail");
+                MessageBox.Show("Wrong Username or Password","Login Fail",MessageBoxButton.OK,MessageBoxImage.Error);
             }
             else
             {

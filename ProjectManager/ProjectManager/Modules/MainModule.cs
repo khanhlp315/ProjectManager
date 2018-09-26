@@ -29,7 +29,7 @@ namespace ProjectManager.Modules
             _container.RegisterTypeForNavigation<Login>();
             _container.RegisterTypeForNavigation<ProjectList>();
 
-            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(AccessingDatabase));
+            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ProjectList));
         }
     }
 }

@@ -6,8 +6,33 @@
              xmlns:local="clr-namespace:ProjectManager.Views"
              mc:Ignorable="d" 
              xmlns:prism="http://prismlibrary.com/"
+             Width="800"
+             Height="500"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <Label Content="Project List"></Label>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Background}"
+                        Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid Grid.Row="0" >
+           
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Project" Style="{StaticResource IconButtonStyle}" ></Button>
+            <Image Source="{StaticResource AppIcon}" Grid.Column="1"/>
+            <Image Source="{StaticResource OptionIcon}" Grid.Column="2"/>
+        </Grid>
+        <Grid Grid.Row="1" >
+            
+        </Grid>
+        
     </Grid>
 </UserControl>

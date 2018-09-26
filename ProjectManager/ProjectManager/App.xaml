@@ -4,50 +4,9 @@
              xmlns:local="clr-namespace:GUI"
              xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <Application.Resources>
-        <Style x:Key="CustomTextboxStyle"
-               TargetType="TextBox">
-            <Setter Property="FontSize"
-                    Value="16" />
-            <Setter Property="FontFamily"
-                    Value="Segoe UI Light" />
-            <Setter Property="Background"
-                    Value="Transparent" />
-            <Setter Property="Margin"
-                    Value="10, 5" />
-            <Setter Property="Padding"
-                    Value="5,0" />
-            <Setter Property="VerticalContentAlignment"
-                    Value="Center" />
-            <Style.Triggers>
-                <Trigger Property="Validation.HasError"
-                         Value="True">
-                    <Setter Property="ToolTip"
-                            Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="CustomPasswordBoxStyle"
-               TargetType="PasswordBox">
-            <Setter Property="FontSize"
-                    Value="16" />
-            <Setter Property="FontFamily"
-                    Value="Segoe UI Light" />
-            <Setter Property="Background"
-                    Value="Transparent" />
-            <Setter Property="Margin"
-                    Value="10, 5" />
-            <Setter Property="Padding"
-                    Value="5,0" />
-            <Setter Property="VerticalContentAlignment"
-                    Value="Center" />
-            <Style.Triggers>
-                <Trigger Property="Validation.HasError"
-                         Value="True">
-                    <Setter Property="ToolTip"
-                            Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+        <BitmapImage x:Key="AppIcon" UriSource="./Resources/AppIcon.png"/>
+        <BitmapImage x:Key="OptionIcon" UriSource="./Resources/OptionIcon.png"/>
+        <BitmapImage x:Key="Background" UriSource="./Resources/Background.png"/>
         <Style x:Key="IconButtonStyle"
                TargetType="Button">
             <Style.Resources>
@@ -129,6 +88,51 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="CustomTextboxStyle"
+               TargetType="TextBox">
+            <Setter Property="FontSize"
+                    Value="16" />
+            <Setter Property="FontFamily"
+                    Value="Segoe UI Light" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="Margin"
+                    Value="10, 5" />
+            <Setter Property="Padding"
+                    Value="5,0" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError"
+                         Value="True">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CustomPasswordBoxStyle"
+               TargetType="PasswordBox">
+            <Setter Property="FontSize"
+                    Value="16" />
+            <Setter Property="FontFamily"
+                    Value="Segoe UI Light" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="Margin"
+                    Value="10, 5" />
+            <Setter Property="Padding"
+                    Value="5,0" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError"
+                         Value="True">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
         <Style x:Key="MenuButtonStyle"
                TargetType="Button"
                BasedOn="{StaticResource IconButtonStyle}">
