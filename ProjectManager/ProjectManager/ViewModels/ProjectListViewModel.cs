@@ -1,4 +1,5 @@
-﻿using ProjectManager.ViewModels.Bases;
+﻿using Prism.Regions;
+using ProjectManager.ViewModels.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace ProjectManager.ViewModels
 {
     class ProjectListViewModel: ViewModelBase
     {
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            string id = (string)navigationContext.Parameters["Id"];
+        }
 
     }
 }

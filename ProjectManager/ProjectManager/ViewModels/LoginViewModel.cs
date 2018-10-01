@@ -71,7 +71,11 @@ namespace ProjectManager.ViewModels
             }
             else
             {
-                _regionManager.RequestNavigate("ContentRegion", "ProjectList");
+                var navigationParameter = new NavigationParameters();
+                navigationParameter.Add("id", 1);
+                navigationParameter.Add("name", "Khanh");
+                navigationParameter.Add("name", new DTO.Member());
+                _regionManager.RequestNavigate("ContentRegion", "ProjectList", navigationParameter);
             }
         }
     }
