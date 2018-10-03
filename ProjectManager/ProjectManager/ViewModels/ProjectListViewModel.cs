@@ -19,7 +19,7 @@ namespace ProjectManager.ViewModels
         private UserManagementImpl _userManagement;
 
         private IRegionManager _regionManager;
-        public ObservableCollection<User> UserList;
+        
 
         public ProjectListViewModel(UserManagementImpl userManagement, IRegionManager regionManager)
         {
@@ -44,6 +44,7 @@ namespace ProjectManager.ViewModels
         {
             var UserList = _userManagement.Manage();
             var navigationParameter = new NavigationParameters();
+            navigationParameter.Add("UserList", UserList);
             _regionManager.RequestNavigate("ContentRegion", "UserManagement", navigationParameter);
         }
 

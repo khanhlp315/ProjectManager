@@ -1,4 +1,4 @@
-﻿<Page x:Class="ProjectManager.Views.UserManagement"
+﻿<UserControl x:Class="ProjectManager.Views.UserManagement"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,8 +8,8 @@
       xmlns:local="clr-namespace:ProjectManager.Views"
       prism:ViewModelLocator.AutoWireViewModel="True"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="500"
-      Title="UserManagement">
+      d:DesignHeight="500" d:DesignWidth="500">
+
 
     <Grid>
         <Grid.Background>
@@ -52,7 +52,7 @@
                     </DockPanel>
                 </materialDesign:ColorZone>
                 <Grid>
-                    <ListView ItemsSource="{Binding UserList}" x:Name="lvProducts" Margin="8,8,8,37.96">
+                    <ListView ItemsSource="{Binding UserList}" x:Name="lvUsers" Margin="8,8,8,37.96">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="UserName" DisplayMemberBinding="{Binding userName}"/>
@@ -64,4 +64,4 @@
             </StackPanel>
         </materialDesign:DrawerHost>
     </Grid>
-</Page>
+</UserControl>

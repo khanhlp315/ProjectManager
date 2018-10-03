@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using BUS;
+using System.Collections.ObjectModel;
 
 namespace ProjectManager.Core.UserManagement
 {
     class UserManagementImpl : iUserManagement
     {
         private readonly ManageUserBUS _manageUserBUS = new ManageUserBUS();
-        public List<User> Manage()
+        public ObservableCollection<User> Manage()
         {
             try
             {

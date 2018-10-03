@@ -3,18 +3,23 @@ using DTO;
 using System.Data.Linq;
 using System.Linq;
 using System;
+using System.Collections.ObjectModel;
 
 namespace DAL
 {
     public class UserDAL
     {
 
-        public List<User> GetAllUsers()
+        public ObservableCollection<User> GetAllUsers()
         {
             List<User> listUsers = new List<User>();
             Table<User> users = DAL.DALConnection.Database.GetTable<User>();
             if (users.Count<User>() > 0)
-                return users.ToList<User>();
+            {
+                ObservableCollection<User> list = new ObservableCollection<User>(users);
+                return list;
+            }
+                
             else
                 return null;
         }
