@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ProjectManager.Views
 {
     /// <summary>
-    /// Interaction logic for ProjectList.xaml
+    /// Interaction logic for UserManagement.xaml
     /// </summary>
-    public partial class ProjectList : UserControl
+    public partial class UserManagement : Page
     {
-        public ProjectList()
+        public UserManagement()
         {
             InitializeComponent();
-        }
-
-        private void ListBoxItem_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-
         }
     }
 }

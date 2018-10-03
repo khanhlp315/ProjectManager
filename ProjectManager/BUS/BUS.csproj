@@ -57,6 +57,7 @@
     <Compile Include="CommonBus.cs" />
     <Compile Include="Exceptions\CheckedException.cs" />
     <Compile Include="LoginBUS.cs" />
+    <Compile Include="ManageUserBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

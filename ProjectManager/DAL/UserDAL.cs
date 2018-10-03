@@ -4,16 +4,19 @@ using System.Data.Linq;
 using System.Linq;
 using System;
 
-namespace DAO
+namespace DAL
 {
     public class UserDAL
     {
 
         public List<User> GetAllUsers()
         {
-            List<User> users = new List<User>();
-
-            return users;
+            List<User> listUsers = new List<User>();
+            Table<User> users = DAL.DALConnection.Database.GetTable<User>();
+            if (users.Count<User>() > 0)
+                return users.ToList<User>();
+            else
+                return null;
         }
 
         public User GetUser(int id)

@@ -1,5 +1,5 @@
 ﻿using BUS.Exceptions;
-using DAO;
+using DAL;
 using DTO;
 
 namespace BUS

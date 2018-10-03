@@ -93,6 +93,8 @@
     <Compile Include="AppInitializer\UnityConfig.cs" />
     <Compile Include="Core\Login\ILogin.cs" />
     <Compile Include="Core\Login\LoginImpl.cs" />
+    <Compile Include="Core\UserManagement\iUserManagement.cs" />
+    <Compile Include="Core\UserManagement\UserManagementImpl.cs" />
     <Compile Include="Modules\MainModule.cs" />
     <Compile Include="Utils\PasswordHelper.cs" />
     <Compile Include="ViewModels\AccessingDatabaseViewModel.cs" />
@@ -111,6 +113,9 @@
     </Compile>
     <Compile Include="Views\ProjectList.xaml.cs">
       <DependentUpon>ProjectList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserManagement.xaml.cs">
+      <DependentUpon>UserManagement.xaml</DependentUpon>
     </Compile>
     <Page Include="GridController.xaml">
       <SubType>Designer</SubType>
@@ -136,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProjectList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
