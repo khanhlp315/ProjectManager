@@ -52,15 +52,33 @@
                     </DockPanel>
                 </materialDesign:ColorZone>
                 <Grid>
-                    <ListView ItemsSource="{Binding UserList}" x:Name="lvUsers" Margin="8,8,8,37.96">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="UserName" DisplayMemberBinding="{Binding userName}"/>
-                                <GridViewColumn Header="Permission" DisplayMemberBinding="{Binding permission}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*">
+
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="UserDataGrid"
+                              Grid.Row="0"
+                              Margin="8,8,8,37.96"
+                              LoadingRow="DataGrid_LoadingRow"
+                              ItemsSource="{Binding UserList}"
+                              AutoGenerateColumns="False"
+                              Style="{StaticResource CustomDataGridStyle}"
+                              >
+                        <DataGrid.Columns>
+       
+                            <DataGridTextColumn Width="3*" Binding="{Binding userName,Mode=TwoWay}" Header="UserName"/>
+                            <DataGridTextColumn Width="1*" Binding="{Binding permission,Mode=TwoWay}" Header="Permission"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button x:Name="AddButton" Tag="&#xE109;" Content="New" Style="{StaticResource ToolbarButtonStyle}"/>
+                        <Button x:Name="RemoveButton" Tag="&#xE104;" Content="New" Style="{StaticResource ToolbarButtonStyle}"/>
+
+                    </StackPanel>
                 </Grid>
+                
             </StackPanel>
         </materialDesign:DrawerHost>
     </Grid>

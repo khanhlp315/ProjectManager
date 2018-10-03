@@ -5,17 +5,21 @@ using ProjectManager.ViewModels.Bases;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectManager.ViewModels
 {
-    class UserManagementViewModel : ViewModelBase,INavigationAware
+    class UserManagementViewModel : ViewModelBase,INavigationAware, INotifyPropertyChanged
     {
         private UserManagementImpl _userManagement;
         private IRegionManager _regionManager;
-        public ObservableCollection<User> UserList;
+        public ObservableCollection<User> UserList { get; set; }
+        public string Textblock = "Binded this one";
+        public string Username { get; set; }
+        public int Permission { get; set; }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             UserList = (ObservableCollection<User>)navigationContext.Parameters["UserList"];
@@ -33,8 +37,12 @@ namespace ProjectManager.ViewModels
 
         public UserManagementViewModel(UserManagementImpl userManagement, IRegionManager regionManager)
         {
+            //UserList = _userManagement.Manage();
             _userManagement = userManagement;
             _regionManager = regionManager;
+            UserList = _userManagement.Manage();
+            Console.WriteLine(UserList);
         }
+        
     }
 }

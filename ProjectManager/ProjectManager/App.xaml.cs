@@ -1,5 +1,9 @@
 ﻿using ProjectManager.AppInitializer;
+using System;
 using System.Windows;
+using System.Windows.Controls;
+
+using System.Collections.ObjectModel;
 
 namespace GUI
 {
@@ -11,6 +15,11 @@ namespace GUI
         protected override void OnStartup(StartupEventArgs e)
         {
             new Bootstrapper().Run();
+        }
+        private void SelectAll_Checked(object sender, RoutedEventArgs e)
+        {
+            //DataGrid dataGrid = ((CheckBox)sender).DataContext;
+            //dataGrid.SelectAll();
         }
     }
 }
