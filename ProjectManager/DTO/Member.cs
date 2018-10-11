@@ -17,9 +17,9 @@ namespace DTO
 
         [Column(Name ="UserID", DbType = "char(6)")]
         string _UserID { get; set; }
-        private EntityRef<User> _userID = new EntityRef<User>();
+        private EntityRef<Project> _userID = new EntityRef<Project>();
         [Association(Storage ="_userID",IsForeignKey =true,ThisKey ="UserID")]
-        public User UserID { get => _userID.Entity; set => _userID.Entity = value; }
+        public Project UserID { get => _userID.Entity; set => _userID.Entity = value; }
         
         [Column(Name = "Role", DbType = "char(1)", Storage = "_Role", CanBeNull = false)]
         int _Role { get; set; }

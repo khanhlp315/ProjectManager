@@ -93,6 +93,8 @@
     <Compile Include="AppInitializer\UnityConfig.cs" />
     <Compile Include="Core\Login\ILogin.cs" />
     <Compile Include="Core\Login\LoginImpl.cs" />
+    <Compile Include="Core\ProjectManagement\iProjectManagement.cs" />
+    <Compile Include="Core\ProjectManagement\ProjectManagementImpl.cs" />
     <Compile Include="Core\UserManagement\iUserManagement.cs" />
     <Compile Include="Core\UserManagement\UserManagementImpl.cs" />
     <Compile Include="Modules\MainModule.cs" />

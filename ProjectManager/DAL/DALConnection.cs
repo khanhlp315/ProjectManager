@@ -26,8 +26,13 @@ namespace DAL
                 if (!Database.DatabaseExists())
                 {
                     User admin = new User("admin", "admin", 0);
+                    Project project = new Project(000001, "abd@12", "myProject");
+                    Project project2 = new Project(000002, "abd@12", "myProject");
                     Database.CreateDatabase();
                     Database.User.InsertOnSubmit(admin);
+                    Database.Project.InsertOnSubmit(project);
+                    Database.Project.InsertOnSubmit(project2);
+                   
                     SummitChanges();
                     return true;    
                 }

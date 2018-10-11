@@ -13,7 +13,7 @@ namespace DTO
         string title;
         string description;
         int projectID;
-        User assigneeUser;
+        Project assigneeUser;
         UserStoryState userStoryState;
     }
 }

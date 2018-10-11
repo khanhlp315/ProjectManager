@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="DALConnection.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ProjectDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -52,7 +52,7 @@ namespace DAL
 
         }
 
-        public void Update(User user)
+        public void Update(Project user)
         {
 
         }

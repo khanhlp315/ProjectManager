@@ -8,7 +8,7 @@
       xmlns:local="clr-namespace:ProjectManager.Views"
       prism:ViewModelLocator.AutoWireViewModel="True"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="500">
+      d:DesignHeight="800" d:DesignWidth="800">
 
 
     <Grid>
@@ -73,7 +73,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button x:Name="AddButton" Tag="&#xE109;" Content="New" Style="{StaticResource ToolbarButtonStyle}"/>
+                        <Button x:Name="AddButton" Command="{Binding AddNewUserCommand}"  Tag="&#xE109;" Content="New" Style="{StaticResource ToolbarButtonStyle}"/>
                         <Button x:Name="RemoveButton" Tag="&#xE104;" Content="New" Style="{StaticResource ToolbarButtonStyle}"/>
 
                     </StackPanel>

@@ -66,6 +66,7 @@
     <Compile Include="Member.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Permission.cs" />
+    <Compile Include="Project.cs" />
     <Compile Include="ProjectManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

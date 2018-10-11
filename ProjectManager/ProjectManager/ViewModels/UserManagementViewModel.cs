@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Prism.Commands;
 using Prism.Regions;
 using ProjectManager.Core.UserManagement;
 using ProjectManager.ViewModels.Bases;
@@ -17,9 +18,9 @@ namespace ProjectManager.ViewModels
         private UserManagementImpl _userManagement;
         private IRegionManager _regionManager;
         public ObservableCollection<User> UserList { get; set; }
-        public string Textblock = "Binded this one";
         public string Username { get; set; }
         public int Permission { get; set; }
+        public DelegateCommand AddNewUserCommand;
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             UserList = (ObservableCollection<User>)navigationContext.Parameters["UserList"];

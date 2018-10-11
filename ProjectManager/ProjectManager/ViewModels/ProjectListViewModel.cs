@@ -11,20 +11,25 @@ using System.Windows;
 using System.Windows.Controls;
 using DTO;
 using System.Collections.ObjectModel;
+using ProjectManager.Core.ProjectManagement;
 
 namespace ProjectManager.ViewModels
 {
     class ProjectListViewModel: ViewModelBase
     {
-        private UserManagementImpl _userManagement;
-
         private IRegionManager _regionManager;
+        private ProjectManagementImpl _projectManament;
+        public ObservableCollection<Project> ProjectList { get; set; }
+        
         
 
-        public ProjectListViewModel(UserManagementImpl userManagement, IRegionManager regionManager)
+        public ProjectListViewModel(ProjectManagementImpl projectManagement, IRegionManager regionManager)
         {
-            _userManagement = userManagement;
+            _projectManament = projectManagement;
             _regionManager = regionManager;
+            ProjectList = _projectManament.Manage();
+            
+            Console.WriteLine(ProjectList);
         }
 
         public DelegateCommand UserManagementCommand
@@ -42,10 +47,8 @@ namespace ProjectManager.ViewModels
         }
         private void UserManagement()
         {
-            var UserList = _userManagement.Manage();
-            var navigationParameter = new NavigationParameters();
-            navigationParameter.Add("UserList", UserList);
-            _regionManager.RequestNavigate("ContentRegion", "UserManagement", navigationParameter);
+            
+            _regionManager.RequestNavigate("ContentRegion", "UserManagement");
         }
 
     }

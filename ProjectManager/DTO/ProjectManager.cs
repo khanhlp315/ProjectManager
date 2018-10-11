@@ -19,6 +19,7 @@ namespace DTO
         }
         public Table<User> User;
         public Table<Member> Member;
+        public Table<Project> Project;
         
         
     }
