@@ -28,11 +28,30 @@ namespace DAL
                     User admin = new User("admin", "admin", 0);
                     Project project = new Project(000001, "abd@12", "myProject");
                     Project project2 = new Project(000002, "abd@12", "myProject");
+                    Project project3 = new Project(000003, "abd@12", "myProject");
+                    Project project4 = new Project(000004, "abd@12", "myProject");
+                    Project project5 = new Project(000005, "abd@12", "myProject");
+                    Project project6 = new Project(000006, "abd@12", "myProject");
+                    Project project7 = new Project(000007, "abd@12", "myProject");
+                    Project project8 = new Project(000008, "abd@12", "myProject");
+                    Project project9 = new Project(000009, "abd@12", "myProject");
+                    Project project10 = new Project(0000010, "abd@12", "myProject");
+                    Project project11 = new Project(0000011, "abd@12", "myProject");
+                    Project project12 = new Project(0000012, "abd@12", "myProject");
                     Database.CreateDatabase();
                     Database.User.InsertOnSubmit(admin);
                     Database.Project.InsertOnSubmit(project);
                     Database.Project.InsertOnSubmit(project2);
-                   
+                    Database.Project.InsertOnSubmit(project3);
+                    Database.Project.InsertOnSubmit(project4);
+                    Database.Project.InsertOnSubmit(project5);
+                    Database.Project.InsertOnSubmit(project6);
+                    Database.Project.InsertOnSubmit(project7);
+                    Database.Project.InsertOnSubmit(project8);
+                    Database.Project.InsertOnSubmit(project9);
+                    Database.Project.InsertOnSubmit(project10);
+                    Database.Project.InsertOnSubmit(project11);
+                    Database.Project.InsertOnSubmit(project12);
                     SummitChanges();
                     return true;    
                 }

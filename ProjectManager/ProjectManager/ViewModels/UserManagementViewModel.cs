@@ -20,12 +20,19 @@ namespace ProjectManager.ViewModels
         public ObservableCollection<User> UserList { get; set; }
         public string Username { get; set; }
         public int Permission { get; set; }
-        public DelegateCommand AddNewUserCommand;
+        public DelegateCommand AddNewUserCommand { get; set; }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             UserList = (ObservableCollection<User>)navigationContext.Parameters["UserList"];
         }
+        protected override void RegisterCommands()
+        {
+            AddNewUserCommand = new DelegateCommand(AddNewUser);
+        }
+        public void AddNewUser()
+        {
 
+        }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             throw new NotImplementedException();

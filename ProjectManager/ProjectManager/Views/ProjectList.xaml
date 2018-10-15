@@ -9,7 +9,7 @@
               xmlns:local="clr-namespace:ProjectManager.Views"
               xmlns:prism="http://prismlibrary.com/" 
               x:Class="ProjectManager.Views.ProjectList" 
-              mc:Ignorable="d" Width="800" Height="800"
+              mc:Ignorable="d" Width="auto" Height="auto"
               prism:ViewModelLocator.AutoWireViewModel="True"
               xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
               >
@@ -22,7 +22,11 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+                <WrapPanel Orientation="Horizontal" Margin="0,0,0,0"/>
+            </ItemsPanelTemplate>
         </ResourceDictionary>
+        
     </UserControl.Resources>
     <Grid>
         
@@ -35,101 +39,117 @@
         </Grid.Background>
 
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
-            <StackPanel>
-                <materialDesign:ColorZone  Mode="Inverted" Padding="10">
-                    <DockPanel>
-                        <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
-                            <StackPanel>
-                                <Button Content="User Management" Command="{Binding UserManagementCommand}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
 
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:PopupBox>
-                        <StackPanel Orientation="Horizontal">
-                            <ToggleButton x:Name="MenuToggleButton" IsChecked="False" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" VerticalAlignment="Center"/>
-                            <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <materialDesign:ColorZone  Mode="Inverted" Padding="10">
+                        <DockPanel>
+                            <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                                <StackPanel>
+                                    <Button Content="User Management" Command="{Binding UserManagementCommand}"/>
+                                    <Button Content="Sign Out"/>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                            <StackPanel Orientation="Horizontal">
+                                <ToggleButton x:Name="MenuToggleButton" IsChecked="False" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" VerticalAlignment="Center"/>
+                                <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">
       Project Manager
-                            </TextBlock>
-                        </StackPanel>
-                    </DockPanel>
-                </materialDesign:ColorZone>
-                <ItemsControl ItemsSource="{Binding ProjectList}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <materialDesign:Flipper Style="{StaticResource MaterialDesignCardFlipper}">
-                                    <materialDesign:Flipper.FrontContent>
-                                        <Grid Height="256" Width="200">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="160"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <materialDesign:ColorZone Mode="PrimaryLight" VerticalAlignment="Stretch">
-                                                <materialDesign:PackIcon Kind="AccountCircle" Height="128" Width="128" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </materialDesign:ColorZone>
-                                            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                <TextBlock Text="{Binding key}" TextAlignment="Center">
-                                                </TextBlock>
-                                                <Button Content="{Binding name}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Command="{x:Static materialDesign:Flipper.FlipCommand}" Margin="0 4 0 0">
-                                                    
-                                                </Button>
-                                            </StackPanel>
-                                        </Grid>
-                                    </materialDesign:Flipper.FrontContent>
-                                    <materialDesign:Flipper.BackContent>
-                                        <Grid Height="256" Width="200">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <materialDesign:ColorZone Mode="Accent" Padding="6">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Command="{x:Static materialDesign:Flipper.FlipCommand}" HorizontalAlignment="Left">
-                                                        <materialDesign:PackIcon Kind="ArrowLeft" HorizontalAlignment="Right"/>
-                                                    </Button>
-                                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">
+                                </TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </materialDesign:ColorZone>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto">
+                        <ItemsControl ItemsPanel="{StaticResource ItemsPanelTemplate1}" ItemsSource="{Binding ProjectList}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <materialDesign:Flipper Style="{StaticResource MaterialDesignCardFlipper}">
+                                                <materialDesign:Flipper.FrontContent>
+                                                    <Grid Height="256" Width="200">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="160"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <materialDesign:ColorZone Mode="PrimaryLight" VerticalAlignment="Stretch">
+                                                            <materialDesign:PackIcon Kind="AccountCircle" Height="128" Width="128" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                        </materialDesign:ColorZone>
+                                                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <TextBlock Text="{Binding key}" TextAlignment="Center">
+                                                            </TextBlock>
+                                                            <Button Content="{Binding name}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Command="{x:Static materialDesign:Flipper.FlipCommand}" Margin="0 4 0 0">
+
+                                                            </Button>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </materialDesign:Flipper.FrontContent>
+                                                <materialDesign:Flipper.BackContent>
+                                                    <Grid Height="256" Width="200">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <materialDesign:ColorZone Mode="Accent" Padding="6">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Command="{x:Static materialDesign:Flipper.FlipCommand}" HorizontalAlignment="Left">
+                                                                    <materialDesign:PackIcon Kind="ArrowLeft" HorizontalAlignment="Right"/>
+                                                                </Button>
+                                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">
           EDIT USER
-                                                    </TextBlock>
-                                                </StackPanel>
-                                            </materialDesign:ColorZone>
-                                            <Grid Grid.Row="1" Margin="0 6 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="172">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                    <RowDefinition/>
-                                                </Grid.RowDefinitions>
-                                                <TextBox materialDesign:HintAssist.Hint="First name" materialDesign:HintAssist.IsFloating="True" Margin="0 12 0 0">
-                                                    James
-                                                </TextBox>
-                                                <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Last name" materialDesign:HintAssist.IsFloating="True" Margin="0 12 0 0">
-                                                    Willock
-                                                </TextBox>
-                                                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
-                                                    <TextBlock VerticalAlignment="Center">
+                                                                </TextBlock>
+                                                            </StackPanel>
+                                                        </materialDesign:ColorZone>
+                                                        <Grid Grid.Row="1" Margin="0 6 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="172">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition/>
+                                                                <RowDefinition/>
+                                                                <RowDefinition/>
+                                                                <RowDefinition/>
+                                                            </Grid.RowDefinitions>
+                                                            <TextBox materialDesign:HintAssist.Hint="First name" materialDesign:HintAssist.IsFloating="True" Margin="0 12 0 0">
+                                                                James
+                                                            </TextBox>
+                                                            <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Last name" materialDesign:HintAssist.IsFloating="True" Margin="0 12 0 0">
+                                                                Willock
+                                                            </TextBox>
+                                                            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
+                                                                <TextBlock VerticalAlignment="Center">
           Email Contact
-                                                    </TextBlock>
-                                                    <ToggleButton Margin="8 0 0 0"/>
-                                                </StackPanel>
-                                                <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
-                                                    <TextBlock VerticalAlignment="Center">
+                                                                </TextBlock>
+                                                                <ToggleButton Margin="8 0 0 0"/>
+                                                            </StackPanel>
+                                                            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
+                                                                <TextBlock VerticalAlignment="Center">
           Telephone Contact
-                                                    </TextBlock>
-                                                    <ToggleButton Margin="8 0 0 0"/>
-                                                </StackPanel>
-                                            </Grid>
+                                                                </TextBlock>
+                                                                <ToggleButton Margin="8 0 0 0"/>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </Grid>
+                                                </materialDesign:Flipper.BackContent>
+                                            </materialDesign:Flipper>
                                         </Grid>
-                                    </materialDesign:Flipper.BackContent>
-                                </materialDesign:Flipper>
-                            </Grid>
-                        </DataTemplate>
+                                    </DataTemplate>
+
+                                </ItemsControl.ItemTemplate>
+
+                            </ItemsControl>
+
                         
-                    </ItemsControl.ItemTemplate>
-                    
-                </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+                
+                
+
+                
 
 
-            </StackPanel>
+            </Grid>
             <materialDesign:DrawerHost.LeftDrawerContent>
                 <DockPanel MinWidth="212">
                     <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 

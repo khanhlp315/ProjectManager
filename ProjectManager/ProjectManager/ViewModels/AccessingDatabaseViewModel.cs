@@ -29,9 +29,9 @@ namespace ProjectManager.ViewModels
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        public async Task<bool> BeginConnecting()
+        public  Task<bool> BeginConnecting()
         {
-            return await BUS.AccessingDatabaseBUS.CreateConnection("Initial Catalog=QuanLyDuAn;Data Source=.;Integrated Security = True");
+            return BUS.AccessingDatabaseBUS.CreateConnection("Initial Catalog=QuanLyDuAn;Data Source=.;Integrated Security = True");
         }
 
         public void Retry()
